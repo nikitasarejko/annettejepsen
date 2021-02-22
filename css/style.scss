@@ -184,7 +184,7 @@ header {
 						top: 100%;
 						left: 0;
 						width: 100vw;
-						height: 94vh;
+						height: 96vh;
 						background-color: $blue-regular;
 						z-index: 2;
 						
@@ -816,7 +816,7 @@ footer {
 			
 			max-width: $max-width;
 			margin: $centered;
-			padding: 2.4rem 3.2rem;
+			padding: 1.6rem 3.2rem;
 			
 			&__left {
 				
@@ -886,6 +886,7 @@ footer {
 	section {
 		
 		&.hero {
+			margin-top: 6.4rem;
 			
 			& .hero__textbox {
 				padding-top: 12.5vmin;
@@ -894,6 +895,7 @@ footer {
 				
 				&__inner {
 					width: 85%;
+					padding: 2.4rem;
 					
 					& h4 {
 						font-size: 2.4rem;
@@ -912,7 +914,7 @@ footer {
 	}
 	
 	.titlebar {
-		margin-top: 8rem;
+		margin-top: 6rem;
 		
 		&__inner {
 			max-width: $max-width;
@@ -929,15 +931,14 @@ footer {
 	main {
 		
 		&.content {
-			padding: 3.2rem;
+			padding: .8rem 3.2rem;
 			flex-direction: column;
 			
 			& figure {
 				
 				&.portrait {
 					width: 66.667%;
-					margin-right: 0;
-					margin-bottom: 3.2rem;
+					margin: 2.4rem 0 3.2rem 0;
 					
 				}
 				
@@ -992,6 +993,7 @@ footer {
 				&__praxiskonzept,
 				&__anfahrt,
 				&__general {
+					margin-top: 2.4rem;
 					
 					& p {
 						
@@ -1002,7 +1004,7 @@ footer {
 					}
 					
 					& .copy {
-						margin-top: 4rem;
+						margin-top: 3.2rem;
 						color: $grey-dark;
 						
 						& h4 {
@@ -1020,6 +1022,7 @@ footer {
 				}
 				
 				&__fachbereiche {
+					margin-top: 2.4rem;
 					
 					p {
 						
