@@ -18,9 +18,22 @@ body {
 	font-family: 'DM Sans', sans-serif;
 	font-size: 1.8rem;
 	line-height: 1.45;
+	overflow-x: hidden;
+	
+	&.locked {
+		overflow-y: hidden;
+	}
+	
+	&.preload * {
+		  -webkit-transition: none !important;
+		  -moz-transition: none !important;
+		  -ms-transition: none !important;
+		  -o-transition: none !important;
+		}
 }
 
 header {
+	position: relative;
 	
 	& .header__top {
 		border-bottom: 1px solid $grey-light;
@@ -86,13 +99,48 @@ header {
 		
 		&__left {
 			
-			img {
-				height: 4.8rem;
+			& figure {
+				
+				&.desktop-large {
+					display: block;
+					
+					& img {
+						height: 4.8rem;
+					}
+					
+				}
+				
+				&.mobile-small {
+					display: none;
+					
+					& img {
+						height: 4.8rem;
+					}
+					
+				}
+				
 			}
 			
 		}
 		
 		&__right {
+			display: flex;
+			align-items: center;
+			
+			div {
+				
+				&.burger-menu {
+					height: 2.4rem;
+					display: none;
+					
+					svg {
+						width: 2.4rem;
+						height: 2.4rem;
+					}
+					
+				}
+				
+			}
 			
 			nav {
 				
@@ -128,6 +176,32 @@ header {
 							background-color: $blue-regular;
 							height: 2px;
 							transition: transform .25s ease-out;
+						}
+					}
+					
+					&-mobile {
+						position: absolute;
+						top: 100%;
+						left: 0;
+						width: 100vw;
+						height: 94vh;
+						background-color: $blue-regular;
+						z-index: 2;
+						
+						display: none;
+						transform: translateX(101%);
+						transition: transform 0.75s ease-out;
+						
+						&.visible {
+							transform: translateX(0%);
+						}
+						
+						& a {
+							text-decoration: none;
+							color: #fff;
+							font-size: 3.2rem;
+							font-weight: 500;
+							margin-bottom: 1.6rem;
 						}
 					}
 					
@@ -344,6 +418,7 @@ main {
 					&.copy {
 						font-size: 2.4rem;
 						margin-bottom: .8rem;
+						color: $black;
 					}	
 					
 				}
@@ -514,6 +589,28 @@ footer {
 	
 }
 
+@media only screen and (max-width: 1680px) {
+	
+	section {
+		
+		&.hero {
+			
+			& .hero__textbox {
+				padding-top: 20vmin;
+				padding-bottom: 20vmin;
+				
+				
+				&__inner {
+					width: 40%;
+				}
+				
+			}
+		}
+		
+	}
+	
+}
+
 @media only screen and (max-width: 1440px) {
 	
 	header {
@@ -566,6 +663,22 @@ footer {
 				
 			}
 			
+			&__right {
+				
+				& nav {
+					
+					&.navigation {
+						
+						a {
+							margin-left: 3.2rem;
+						}
+						
+					}
+					
+				}
+				
+			}
+			
 		}
 		
 	}
@@ -587,5 +700,349 @@ footer {
 		}
 		
 	}
+	
+	.titlebar {
+		
+		&__inner {
+			padding: 2.4rem 3.2rem;
+			
+			& h1 {
+				font-size: 2.8rem;
+				color: #fff;
+			}
+		}
+	}
+	
+	main {
+		
+		&.content {
+			padding: 4.8rem 3.2rem;
+			
+			& .content {
+				
+				&__about {
+					
+					& .lebenslauf {
+						margin-top: 8rem;
+						
+						& h4 {
+							
+							&.lebenslauf__headline {
+								margin-bottom: 3.2rem;
+								color: $grey-dark;
+							}
+							
+						}
+						
+						&__grid {
+							display: grid;
+							grid-template-columns: minmax(max-content, 1fr) 2fr;
+							grid-row-gap: 1.6rem;
+							margin-bottom: 8rem;
+						}
+						
+						& p {
+							
+							&.lebenslauf__grid__value {
+								margin-right: 2.4rem;
+							}
+							
+						}
+					}
+				}
+				
+				&__praxiskonzept,
+				&__anfahrt,
+				&__general {
+					max-width: 90rem;
+					
+						
+						& .copy {
+							margin-top: 2.4rem;
+						}
+						
+						& p {
+							
+							&.introduction {
+								font-size: 1.8rem;
+							}
+							
+						}
+						
+					
+				}
+				
+				&__fachbereiche {
+					
+					p {
+						
+						&.copy {
+							font-size: 2.1rem;
+						}	
+						
+					}
+					
+				}
+				
+			}
+			
+	
+		}
+		
+	}
+	
+}
+
+@media only screen and (max-width: 1024px) {
+	
+	header {
+		position: relative;
+		
+		& .header__top {
+			display: none;
+		}
+			
+		
+		& .header__bottom {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			
+			max-width: $max-width;
+			margin: $centered;
+			padding: 2.4rem 3.2rem;
+			
+			&__left {
+				
+				& figure {
+					
+					&.desktop-large {
+						display: none;
+						
+						& img {
+							height: 0;
+						}
+						
+					}
+					
+					&.mobile-small {
+						display: block;
+						
+						& img {
+							height: 3.2rem;
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+			&__right {
+				display: flex;
+				align-items: center;
+				
+				div {
+					
+					&.burger-menu {
+						display: block;
+					}
+					
+				}
+				
+				nav {
+					
+					&.navigation {
+						display: none;
+						
+						&-mobile {
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							align-items: center;
+							
+							& a {
+								text-decoration: none;
+								color: #fff;
+								font-size: 3.2rem;
+								font-weight: 500;
+								margin-bottom: 1.6rem;
+							}
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	section {
+		
+		&.hero {
+			
+			& .hero__textbox {
+				padding-top: 12.5vmin;
+				padding-bottom: 12.5vmin;
+				
+				
+				&__inner {
+					width: 85%;
+					
+					& h4 {
+						font-size: 2.4rem;
+						margin-bottom: 1.6rem;
+					}
+					
+					& p {
+						font-size: 1.8rem;
+						margin-bottom: 4rem;
+					}
+				}
+				
+			}
+		}
+		
+	}
+	
+	footer {
+		
+		&.footer {
+			
+			& .footer__top {
+				
+				&__inner {
+					flex-direction: column;
+					padding: 3.2rem;
+					padding-bottom: 6.4rem;
+					
+					&__left {
+						width: 100%;
+						margin-bottom: 4rem;						
+					}
+					
+					&__headline {
+						margin-bottom: 1.6rem;
+						
+						& h5 {
+							font-size: 2.4rem;
+							font-weight: 500;
+							color: $black;
+						}
+						
+					}
+					
+					&__kontakt {
+						
+						&__row {
+							display: flex;
+							font-size: 1.6rem;
+							color: $grey-medium;
+							padding-top: .8rem;
+							padding-bottom: .8rem;
+							border-bottom: 1px solid transparent;
+							
+							& span {
+								margin-right: 2.4rem;
+							}
+						}
+						
+					}
+					
+					&__sprechzeiten {
+						
+						&__row {
+							display: grid;
+							grid-template-columns: 1fr 2fr;
+							font-size: 1.6rem;
+							color: $grey-medium;
+							padding-bottom: .8rem;
+							padding-top: .8rem;
+							border-bottom: 1px solid $grey-light;
+							
+							& span {
+								color: $grey-medium;
+							}
+							
+							& p {
+								color: $grey-medium;
+								opacity: 0.6;
+								text-align: right;
+							}
+						}
+						
+					}
+					
+					&__right {
+						width: 100%;
+					}
+					
+					
+					&__sprechzeiten {
+						
+						&__inner {
+							display: flex;
+							flex-direction: column;
+							width: 100%;
+							
+							&__left {
+								width: 100%;
+								margin-right: 4rem;
+							}
+							
+							&__right {
+								width: 100%;
+							}
+						}
+						
+					}
+					
+				}
+				
+			}
+			
+			& .footer__bottom {
+				
+				&__inner {
+					display: flex;
+					justify-content: space-between;
+					align-items: flex-start;
+					
+					max-width: $max-width;
+					margin: $centered;
+					padding: 1.6rem 3.2rem;
+					font-size: 1.4rem;
+					font-weight: 500;
+					
+					&__col {
+						
+						& p {
+							color: $grey-medium;
+						}
+						
+						& a {
+							text-decoration: none;
+							color: $black;
+							padding-left: 3.2rem;
+							transition: all .3s ease-out;
+							
+							&:hover {
+								text-decoration: underline;
+								color: $blue-regular;
+							}
+						}
+						
+					}
+				}
+				
+			}
+			
+		}
+		
+	}
+	
 	
 }
