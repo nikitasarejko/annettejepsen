@@ -237,6 +237,7 @@ section {
 				padding: 4.8rem;
 				margin: 3.2rem;
 				background-color: rgba(78, 114, 214, 0.75);
+				-webkit-backdrop-filter: blur(20px);
 				backdrop-filter: blur(5px);
 				border-radius: .8rem;
 				
@@ -895,7 +896,7 @@ footer {
 				
 				&__inner {
 					width: 85%;
-					padding: 2.4rem;
+					padding: 3.2rem;
 					
 					& h4 {
 						font-size: 2.4rem;
@@ -903,7 +904,7 @@ footer {
 					}
 					
 					& p {
-						font-size: 1.8rem;
+						font-size: 1.6rem;
 						margin-bottom: 4rem;
 					}
 				}
@@ -1063,7 +1064,7 @@ footer {
 						margin-bottom: 1.6rem;
 						
 						& h5 {
-							font-size: 2.4rem;
+							font-size: 2rem;
 							font-weight: 500;
 							color: $black;
 						}
@@ -1073,16 +1074,9 @@ footer {
 					&__kontakt {
 						
 						&__row {
-							display: flex;
-							font-size: 1.6rem;
-							color: $grey-medium;
-							padding-top: .8rem;
-							padding-bottom: .8rem;
-							border-bottom: 1px solid transparent;
-							
-							& span {
-								margin-right: 2.4rem;
-							}
+							font-size: 1.4rem;
+							padding-top: .4rem;
+							padding-bottom: .4rem;
 						}
 						
 					}
@@ -1090,21 +1084,9 @@ footer {
 					&__sprechzeiten {
 						
 						&__row {
-							display: grid;
-							grid-template-columns: 1fr 2fr;
-							font-size: 1.6rem;
-							color: $grey-medium;
-							padding-bottom: .8rem;
-							padding-top: .8rem;
-							border-bottom: 1px solid $grey-light;
-							
-							& span {
-								color: $grey-medium;
-							}
+							font-size: 1.4rem;
 							
 							& p {
-								color: $grey-medium;
-								opacity: 0.6;
 								text-align: right;
 							}
 						}
@@ -1142,9 +1124,7 @@ footer {
 			& .footer__bottom {
 				
 				&__inner {
-					display: flex;
-					justify-content: space-between;
-					align-items: flex-start;
+					flex-direction: column;
 					
 					max-width: $max-width;
 					margin: $centered;
@@ -1154,6 +1134,10 @@ footer {
 					
 					&__col {
 						
+						&:first-of-type {
+							margin-bottom: 1.6rem;
+						}
+						
 						& p {
 							color: $grey-medium;
 						}
@@ -1161,7 +1145,8 @@ footer {
 						& a {
 							text-decoration: none;
 							color: $black;
-							padding-left: 3.2rem;
+							padding-left: 0;
+							padding-right: 2.4rem;
 							transition: all .3s ease-out;
 							
 							&:hover {
