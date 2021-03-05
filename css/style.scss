@@ -284,14 +284,18 @@ main {
     & figure {
       &.portrait {
         width: 33.333%;
-        height: 100%;
         margin-right: 0.8vw;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
 
         & img {
           width: 75%;
           height: auto;
           object-fit: cover;
-          padding-bottom: 1.6rem;
+          padding-bottom: 0.8rem;
         }
       }
     }
