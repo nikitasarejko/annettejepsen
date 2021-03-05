@@ -1,1313 +1,1085 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap");
 
 $grey-dark: #707070;
-$grey-medium: #9B9B9B;
-$grey-light: #E8E8E8;
-$blue-dark: #2E4481;
-$blue-regular: #4E72D6;
-$black: #4E4E4E;
+$grey-medium: #9b9b9b;
+$grey-light: #e8e8e8;
+$blue-dark: #2e4481;
+$blue-regular: #4e72d6;
+$black: #4e4e4e;
 
 $max-width: 180rem;
 $centered: 0 auto;
 
 html {
-	font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-	font-family: 'DM Sans', sans-serif;
-	font-size: 1.8rem;
-	line-height: 1.45;
-	overflow-x: hidden;
-	
-	&.locked {
-		overflow-y: hidden;
-	}
-	
-	&.preload * {
-		  -webkit-transition: none !important;
-		  -moz-transition: none !important;
-		  -ms-transition: none !important;
-		  -o-transition: none !important;
-		}
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.45;
+  overflow-x: hidden;
+
+  &.locked {
+    overflow-y: hidden;
+  }
+
+  &.preload * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+  }
 }
 
 header {
-	position: relative;
-	
-	& .header__top {
-		border-bottom: 1px solid $grey-light;
-		
-		&__container {
-			max-width: $max-width;
-			margin: $centered;
-			padding: 1.6rem 3.2rem;
-			
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-		
-			&__left {
-				display: flex;
-				align-items: center;
-				
-				svg {
-					width: 1.6rem;
-					height: 1.6rem;
-					margin-right: .4rem;
-				}
-				
-				p {
-					font-size: 1.4rem;
-					color: $grey-dark;
-					font-weight: 500;
-				}
-				
-			}
-			
-			&__right {
-				display: flex;
-				align-items: center;
-				
-				svg {
-					width: 1.6rem;
-					height: 1.6rem;
-					margin-right: .4rem;
-				}
-				
-				p {
-					font-size: 1.4rem;
-					color: $grey-dark;
-					font-weight: 500;
-				}
-				
-			}
-			
-		}
-		
-	}
-		
-	
-	& .header__bottom {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		
-		max-width: $max-width;
-		margin: $centered;
-		padding: 3.2rem;
-		
-		&__left {
-			
-			& figure {
-				
-				&.desktop-large {
-					display: block;
-					
-					& img {
-						height: 4.8rem;
-					}
-					
-				}
-				
-				&.mobile-small {
-					display: none;
-					
-					& img {
-						height: 4.8rem;
-					}
-					
-				}
-				
-			}
-			
-		}
-		
-		&__right {
-			display: flex;
-			align-items: center;
-			
-			div {
-				
-				&.burger-menu {
-					height: 2.4rem;
-					display: none;
-					
-					svg {
-						width: 2.4rem;
-						height: 2.4rem;
-					}
-					
-				}
-				
-			}
-			
-			nav {
-				
-				&.navigation {
-					
-					a {
-						text-decoration: none;
-						color: $black;
-						font-size: 1.6rem;
-						font-weight: 500;
-						margin-left: 4rem;
-						position: relative;
-						transition: color .25s ease-out;
-						
-						&:hover {
-							color: $blue-regular;
-							
-							&::before {
-								// width: 100%;
-								transform: scaleX(0.99);
-								transform-origin: center;
-							}
-						}
-						
-						&::before {
-							content: '';
-							position: absolute;
-							bottom: -.5rem;
-							left: 0;
-							width: 100%;
-							transform: scaleX(0);
-							display: inline-block;
-							background-color: $blue-regular;
-							height: 2px;
-							transition: transform .25s ease-out;
-						}
-					}
-					
-					&-mobile {
-						position: absolute;
-						top: 100%;
-						left: 0;
-						width: 100vw;
-						height: 96vh;
-						background-color: $blue-regular;
-						z-index: 2;
-						
-						display: none;
-						transform: translateX(101%);
-						transition: transform 0.75s ease-out;
-						
-						&.visible {
-							transform: translateX(0%);
-						}
-						
-						& a {
-							text-decoration: none;
-							color: #fff;
-							font-size: 3.2rem;
-							font-weight: 500;
-							margin-bottom: 1.6rem;
-						}
-					}
-					
-				}
-				
-			}
-			
-		}
-		
-	}
-	
+  position: relative;
+
+  & .header__top {
+    border-bottom: 1px solid $grey-light;
+
+    &__container {
+      max-width: $max-width;
+      margin: $centered;
+      padding: 1.6rem 3.2rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &__left {
+        display: flex;
+        align-items: center;
+
+        svg {
+          width: 1.6rem;
+          height: 1.6rem;
+          margin-right: 0.4rem;
+        }
+
+        p {
+          font-size: 1.4rem;
+          color: $grey-dark;
+          font-weight: 500;
+        }
+      }
+
+      &__right {
+        display: flex;
+        align-items: center;
+
+        svg {
+          width: 1.6rem;
+          height: 1.6rem;
+          margin-right: 0.4rem;
+        }
+
+        p {
+          font-size: 1.4rem;
+          color: $grey-dark;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  & .header__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: $max-width;
+    margin: $centered;
+    padding: 3.2rem;
+
+    &__left {
+      & figure {
+        &.desktop-large {
+          display: block;
+
+          & img {
+            height: 4.8rem;
+          }
+        }
+
+        &.mobile-small {
+          display: none;
+
+          & img {
+            height: 4.8rem;
+          }
+        }
+      }
+    }
+
+    &__right {
+      display: flex;
+      align-items: center;
+
+      div {
+        &.burger-menu {
+          height: 2.4rem;
+          display: none;
+
+          svg {
+            width: 2.4rem;
+            height: 2.4rem;
+          }
+        }
+      }
+
+      nav {
+        &.navigation {
+          a {
+            text-decoration: none;
+            color: $black;
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-left: 4rem;
+            position: relative;
+            transition: color 0.25s ease-out;
+
+            &:hover {
+              color: $blue-regular;
+
+              &::before {
+                // width: 100%;
+                transform: scaleX(0.99);
+                transform-origin: center;
+              }
+            }
+
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: -0.5rem;
+              left: 0;
+              width: 100%;
+              transform: scaleX(0);
+              display: inline-block;
+              background-color: $blue-regular;
+              height: 2px;
+              transition: transform 0.25s ease-out;
+            }
+          }
+
+          &-mobile {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100vw;
+            height: 96vh;
+            background-color: $blue-regular;
+            z-index: 2;
+
+            display: none;
+            transform: translateX(101%);
+            transition: transform 0.75s ease-out;
+
+            &.visible {
+              transform: translateX(0%);
+            }
+
+            & a {
+              text-decoration: none;
+              color: #fff;
+              font-size: 3.2rem;
+              font-weight: 500;
+              margin-bottom: 1.6rem;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 section {
-	
-	&.hero {
-		position: relative;
-		background-image: url(../img/hero-image.jpg);
-		background-size: cover;
-		background-position: center;
-		height: 100%;
-		
-		& .hero__textbox {
-			max-width: $max-width;
-			margin: $centered;
-			height: 100%;
-			padding-top: 25vmin;
-			padding-bottom: 25vmin;
-			
-			
-			&__inner {
-				width: 60vmin;
-				padding: 4.8rem;
-				margin: 3.2rem;
-				background-color: rgba(78, 114, 214, 0.75);
-				-webkit-backdrop-filter: blur(20px);
-				backdrop-filter: blur(5px);
-				border-radius: .8rem;
-				
-				& h4 {
-					font-size: 3.6rem;
-					font-weight: 500;
-					color: #fff;
-					margin-bottom: 2.4rem;
-				}
-				
-				& p {
-					font-size: 2rem;
-					line-height: 1.25;
-					color: #fff;
-					margin-bottom: 6.4rem;
-				}
-				
-				& a {
-					
-					&.btn-round {
-						display: inline-flex;
-						background-color: #fff;
-						color: $blue-dark;
-						font-size: 1.4rem;
-						font-weight: 500;
-						text-align: center;
-						text-decoration: none;
-						padding: 2rem 4rem;
-						border-radius: 4rem;
-						
-						transition: all .25s ease-out;
-						
-						&:hover {
-							transition: all .25s ease-in;
-							background-color: $blue-dark;
-							color: #fff;
-						}
-					}
-				}
-			}
-		}
-	}
+  &.hero {
+    position: relative;
+    background-image: url(../img/hero-image.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+
+    & .hero__textbox {
+      max-width: $max-width;
+      margin: $centered;
+      height: 100%;
+      padding-top: 25vmin;
+      padding-bottom: 25vmin;
+
+      &__inner {
+        width: 60vmin;
+        padding: 4.8rem;
+        margin: 3.2rem;
+        background-color: rgba(78, 114, 214, 0.75);
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(5px);
+        border-radius: 0.8rem;
+
+        & h4 {
+          font-size: 3.6rem;
+          font-weight: 500;
+          color: #fff;
+          margin-bottom: 2.4rem;
+        }
+
+        & p {
+          font-size: 2rem;
+          line-height: 1.25;
+          color: #fff;
+          margin-bottom: 6.4rem;
+        }
+
+        & a {
+          &.btn-round {
+            display: inline-flex;
+            background-color: #fff;
+            color: $blue-dark;
+            font-size: 1.4rem;
+            font-weight: 500;
+            text-align: center;
+            text-decoration: none;
+            padding: 2rem 4rem;
+            border-radius: 4rem;
+
+            transition: all 0.25s ease-out;
+
+            &:hover {
+              transition: all 0.25s ease-in;
+              background-color: $blue-dark;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .titlebar {
-	background-color: $blue-regular;
-	
-	&__inner {
-		max-width: $max-width;
-		margin: $centered;
-		padding: 3.2rem;
-		
-		& h1 {
-			font-size: 3.2rem;
-			color: #fff;
-		}
-	}
+  background-color: $blue-regular;
+
+  &__inner {
+    max-width: $max-width;
+    margin: $centered;
+    padding: 3.2rem;
+
+    & h1 {
+      font-size: 3.2rem;
+      color: #fff;
+    }
+  }
 }
 
 main {
-	
-	&.content {
-		max-width: $max-width;
-		margin: $centered;
-		padding: 6.4rem 3.2rem;
-		
-		display: flex;
-		
-		& figure {
-			
-			&.portrait {
-				width: 33.333%;
-				height: 100%;
-				margin-right: .8vw;
-				
-				& img {
-					width: 75%;
-					height: auto;
-					object-fit: cover;
-				}
-				
-			}
-			
-		}
-		
-		& .content {
-			
-			&__about {
-				width: 66.667%;
-				
-				& p {
-					
-					&.introduction {
-						font-size: 2.1rem;
-						max-width: 80rem;
-						color: $black;
-					}
-					
-				}
-				
-				& .lebenslauf {
-					margin-top: 12rem;
-					font-size: 1.8rem;
-					color: $grey-dark;
-					
-					& h4 {
-						
-						&.lebenslauf__headline {
-							margin-bottom: 4rem;
-							color: $grey-dark;
-						}
-						
-					}
-					
-					&__grid {
-						display: grid;
-						grid-template-columns: minmax(max-content, 1fr) 2fr;
-						grid-row-gap: 1.6rem;
-						margin-bottom: 8rem;
-					}
-					
-					& p {
-						
-						&.lebenslauf__grid__value {
-							margin-right: 2.4rem;
-						}
-						
-					}
-				}
-			}
-			
-			&__praxiskonzept,
-			&__anfahrt,
-			&__general,
-			&__kontakt {
-				max-width: 120rem;
-				
-				& p {
-					
-					&.introduction {
-						font-size: 2.1rem;
-						color: $black;
-						margin-bottom: 4.8rem;
-					}
-					
-				}
-				
-				& .copy {
-					color: $grey-dark;
-					
-					& a {
-						text-decoration: none;
-					}
-					
-					& h4 {
-						
-						&.copy__headline {
-							margin-bottom: 1.6rem;
-						}
-						
-					}
-					
-					& .copy__text {
-						margin-bottom: 6.4rem;
-						
-						& a {
-							text-decoration: none;
-							color: $blue-regular;
-							transition: all .3s ease-out;
-							
-							&:hover {
-								color: $black;
-								text-decoration: underline;
-							}
-						}
-					}
-				}
-			}
-			
-			&__fachbereiche {
-				
-				p {
-					
-					&.copy {
-						font-size: 2.4rem;
-						margin-bottom: .8rem;
-						color: $black;
-					}	
-					
-				}
-				
-			}
-			
-		}
-		
+  &.content {
+    max-width: $max-width;
+    margin: $centered;
+    padding: 6.4rem 3.2rem;
 
-	}
-	
+    display: flex;
+
+    & figure {
+      &.portrait {
+        width: 33.333%;
+        height: 100%;
+        margin-right: 0.8vw;
+
+        & img {
+          width: 75%;
+          height: auto;
+          object-fit: cover;
+          padding-bottom: 1.6rem;
+        }
+      }
+    }
+
+    & .content {
+      &__about {
+        width: 66.667%;
+
+        & p {
+          &.introduction {
+            font-size: 2.1rem;
+            max-width: 80rem;
+            color: $black;
+          }
+        }
+
+        & .lebenslauf {
+          margin-top: 12rem;
+          font-size: 1.8rem;
+          color: $grey-dark;
+
+          & h4 {
+            &.lebenslauf__headline {
+              margin-bottom: 4rem;
+              color: $grey-dark;
+            }
+          }
+
+          &__grid {
+            display: grid;
+            grid-template-columns: minmax(max-content, 1fr) 2fr;
+            grid-row-gap: 1.6rem;
+            margin-bottom: 8rem;
+          }
+
+          & p {
+            &.lebenslauf__grid__value {
+              margin-right: 2.4rem;
+            }
+          }
+        }
+      }
+
+      &__praxiskonzept,
+      &__anfahrt,
+      &__general,
+      &__kontakt {
+        max-width: 120rem;
+
+        & p {
+          &.introduction {
+            font-size: 2.1rem;
+            color: $black;
+            margin-bottom: 4.8rem;
+          }
+        }
+
+        & .copy {
+          color: $grey-dark;
+
+          & a {
+            text-decoration: none;
+          }
+
+          & h4 {
+            &.copy__headline {
+              margin-bottom: 1.6rem;
+            }
+          }
+
+          & .copy__text {
+            margin-bottom: 6.4rem;
+
+            & a {
+              text-decoration: none;
+              color: $blue-regular;
+              transition: all 0.3s ease-out;
+
+              &:hover {
+                color: $black;
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+
+      &__fachbereiche {
+        p {
+          &.copy {
+            font-size: 2.4rem;
+            margin-bottom: 0.8rem;
+            color: $black;
+          }
+        }
+      }
+    }
+  }
 }
 
 .mapouter {
-	position: relative;
-	text-align: right;
-	height: 50vh;
-	width: 100%;
+  position: relative;
+  text-align: right;
+  height: 50vh;
+  width: 100%;
 }
 
 .gmap_canvas {
-	overflow: hidden;
-	background: none !important;
-	height: 100%;
-	width: 100%;
+  overflow: hidden;
+  background: none !important;
+  height: 100%;
+  width: 100%;
 }
 
 footer {
-	
-	&.footer {
-		width: 100%;
-		
-		& .footer__top {
-			width: 100%;
-			border-bottom: 1px solid $grey-light;
-			border-top: 1px solid $grey-light;
-			
-			&__inner {
-				max-width: $max-width;
-				margin: $centered;
-				padding: 3.2rem;
-				padding-bottom: 6.4rem;
-				font-weight: 500;
-				
-				display: flex;
-				justify-content: space-between;
-				
-				&__left {
-					width: 33.333%;
-					
-				}
-				
-				&__headline {
-					margin-bottom: 2.4rem;
-					
-					& h5 {
-						font-size: 2.4rem;
-						font-weight: 500;
-						color: $black;
-					}
-					
-				}
-				
-				&__kontakt {
-					
-					&__row {
-						display: flex;
-						font-size: 1.6rem;
-						color: $grey-medium;
-						padding-top: .8rem;
-						padding-bottom: .8rem;
-						border-bottom: 1px solid transparent;
-						
-						& span {
-							margin-right: 2.4rem;
-						}
-					}
-					
-				}
-				
-				&__sprechzeiten {
-					
-					&__row {
-						display: grid;
-						grid-template-columns: 1fr 2fr;
-						font-size: 1.6rem;
-						color: $grey-medium;
-						padding-bottom: .8rem;
-						padding-top: .8rem;
-						border-bottom: 1px solid $grey-light;
-						
-						& span {
-							color: $grey-medium;
-						}
-						
-						& p {
-							color: $grey-medium;
-							opacity: 0.6;
-						}
-					}
-					
-				}
-				
-				&__right {
-					width: 66.667%;
-				}
-				
-				
-				&__sprechzeiten {
-					
-					&__inner {
-						display: flex;
-						width: 100%;
-						
-						&__left {
-							width: 50%;
-							margin-right: 4rem;
-						}
-						
-						&__right {
-							width: 50%;
-						}
-					}
-					
-				}
-				
-			}
-			
-		}
-		
-		& .footer__bottom {
-			
-			&__inner {
-				display: flex;
-				justify-content: space-between;
-				align-items: flex-start;
-				
-				max-width: $max-width;
-				margin: $centered;
-				padding: 1.6rem 3.2rem;
-				font-size: 1.4rem;
-				font-weight: 500;
-				
-				&__col {
-					
-					& p {
-						color: $grey-medium;
-					}
-					
-					& a {
-						text-decoration: none;
-						color: $black;
-						padding-left: 6.4rem;
-						transition: all .3s ease-out;
-						
-						&:hover {
-							text-decoration: underline;
-							color: $blue-regular;
-						}
-					}
-					
-				}
-			}
-			
-		}
-		
-	}
-	
+  &.footer {
+    width: 100%;
+
+    & .footer__top {
+      width: 100%;
+      border-bottom: 1px solid $grey-light;
+      border-top: 1px solid $grey-light;
+
+      &__inner {
+        max-width: $max-width;
+        margin: $centered;
+        padding: 3.2rem;
+        padding-bottom: 6.4rem;
+        font-weight: 500;
+
+        display: flex;
+        justify-content: space-between;
+
+        &__left {
+          width: 33.333%;
+        }
+
+        &__headline {
+          margin-bottom: 2.4rem;
+
+          & h5 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            color: $black;
+          }
+        }
+
+        &__kontakt {
+          &__row {
+            display: flex;
+            font-size: 1.6rem;
+            color: $grey-medium;
+            padding-top: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid transparent;
+
+            & span {
+              margin-right: 2.4rem;
+            }
+          }
+        }
+
+        &__sprechzeiten {
+          &__row {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            font-size: 1.6rem;
+            color: $grey-medium;
+            padding-bottom: 0.8rem;
+            padding-top: 0.8rem;
+            border-bottom: 1px solid $grey-light;
+
+            & span {
+              color: $grey-medium;
+            }
+
+            & p {
+              color: $grey-medium;
+              opacity: 0.6;
+            }
+          }
+        }
+
+        &__right {
+          width: 66.667%;
+        }
+
+        &__sprechzeiten {
+          &__inner {
+            display: flex;
+            width: 100%;
+
+            &__left {
+              width: 50%;
+              margin-right: 4rem;
+            }
+
+            &__right {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+
+    & .footer__bottom {
+      &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        max-width: $max-width;
+        margin: $centered;
+        padding: 1.6rem 3.2rem;
+        font-size: 1.4rem;
+        font-weight: 500;
+
+        &__col {
+          & p {
+            color: $grey-medium;
+          }
+
+          & a {
+            text-decoration: none;
+            color: $black;
+            padding-left: 6.4rem;
+            transition: all 0.3s ease-out;
+
+            &:hover {
+              text-decoration: underline;
+              color: $blue-regular;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 1680px) {
-	
-	section {
-		
-		&.hero {
-			
-			& .hero__textbox {
-				padding-top: 20vmin;
-				padding-bottom: 20vmin;
-				
-				
-				&__inner {
-					width: 40%;
-				}
-				
-			}
-		}
-		
-	}
-	
+  section {
+    &.hero {
+      & .hero__textbox {
+        padding-top: 20vmin;
+        padding-bottom: 20vmin;
+
+        &__inner {
+          width: 40%;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 1440px) {
-	
-	header {
-		
-		& .header__top {
-			
-			&__container {
-			
-				&__left {
-					
-					p {
-						font-size: 1.25rem;
-						color: $grey-dark;
-						font-weight: 500;
-					}
-					
-				}
-				
-				&__right {
-					display: flex;
-					align-items: center;
-					
-					p {
-						font-size: 1.4rem;
-						color: $grey-dark;
-						font-weight: 500;
-					}
-					
-				}
-				
-			}
-			
-		}
-			
-		
-		& .header__bottom {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			
-			max-width: $max-width;
-			margin: $centered;
-			padding: 2.4rem 3.2rem;
-			
-			&__left {
-				
-				img {
-					height: 4rem;
-				}
-				
-			}
-			
-			&__right {
-				
-				& nav {
-					
-					&.navigation {
-						
-						a {
-							margin-left: 3.2rem;
-						}
-						
-					}
-					
-				}
-				
-			}
-			
-		}
-		
-	}
-	
-	section {
-		
-		&.hero {
-			
-			& .hero__textbox {
-				padding-top: 17.5vmin;
-				padding-bottom: 17.5vmin;
-				
-				
-				&__inner {
-					width: 50%;
-				}
-				
-			}
-		}
-		
-	}
-	
-	.titlebar {
-		
-		&__inner {
-			padding: 2.4rem 3.2rem;
-			
-			& h1 {
-				font-size: 2.8rem;
-				color: #fff;
-			}
-		}
-	}
-	
-	main {
-		
-		&.content {
-			padding: 4.8rem 3.2rem;
-			
-			& .content {
-				
-				&__about {
-					
-					& .lebenslauf {
-						margin-top: 8rem;
-						
-						& h4 {
-							
-							&.lebenslauf__headline {
-								margin-bottom: 3.2rem;
-								color: $grey-dark;
-							}
-							
-						}
-						
-						&__grid {
-							display: grid;
-							grid-template-columns: minmax(max-content, 1fr) 2fr;
-							grid-row-gap: 1.6rem;
-							margin-bottom: 8rem;
-						}
-						
-						& p {
-							
-							&.lebenslauf__grid__value {
-								margin-right: 2.4rem;
-							}
-							
-						}
-					}
-				}
-				
-				&__praxiskonzept,
-				&__anfahrt,
-				&__general {
-					max-width: 90rem;
-					
-						
-						& .copy {
-							margin-top: 2.4rem;
-						}
-						
-						& p {
-							
-							&.introduction {
-								font-size: 1.8rem;
-							}
-							
-						}
-						
-					
-				}
-				
-				&__fachbereiche {
-					
-					p {
-						
-						&.copy {
-							font-size: 2.1rem;
-						}	
-						
-					}
-					
-				}
-				
-			}
-			
-	
-		}
-		
-	}
-	
+  header {
+    & .header__top {
+      &__container {
+        &__left {
+          p {
+            font-size: 1.25rem;
+            color: $grey-dark;
+            font-weight: 500;
+          }
+        }
+
+        &__right {
+          display: flex;
+          align-items: center;
+
+          p {
+            font-size: 1.4rem;
+            color: $grey-dark;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    & .header__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      max-width: $max-width;
+      margin: $centered;
+      padding: 2.4rem 3.2rem;
+
+      &__left {
+        img {
+          height: 4rem;
+        }
+      }
+
+      &__right {
+        & nav {
+          &.navigation {
+            a {
+              margin-left: 3.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    &.hero {
+      & .hero__textbox {
+        padding-top: 17.5vmin;
+        padding-bottom: 17.5vmin;
+
+        &__inner {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  .titlebar {
+    &__inner {
+      padding: 2.4rem 3.2rem;
+
+      & h1 {
+        font-size: 2.8rem;
+        color: #fff;
+      }
+    }
+  }
+
+  main {
+    &.content {
+      padding: 4.8rem 3.2rem;
+
+      & .content {
+        &__about {
+          & .lebenslauf {
+            margin-top: 8rem;
+
+            & h4 {
+              &.lebenslauf__headline {
+                margin-bottom: 3.2rem;
+                color: $grey-dark;
+              }
+            }
+
+            &__grid {
+              display: grid;
+              grid-template-columns: minmax(max-content, 1fr) 2fr;
+              grid-row-gap: 1.6rem;
+              margin-bottom: 8rem;
+            }
+
+            & p {
+              &.lebenslauf__grid__value {
+                margin-right: 2.4rem;
+              }
+            }
+          }
+        }
+
+        &__praxiskonzept,
+        &__anfahrt,
+        &__general {
+          max-width: 90rem;
+
+          & .copy {
+            margin-top: 2.4rem;
+          }
+
+          & p {
+            &.introduction {
+              font-size: 1.8rem;
+            }
+          }
+        }
+
+        &__fachbereiche {
+          p {
+            &.copy {
+              font-size: 2.1rem;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 1024px) {
-	
-	header {
-		position: relative;
-		z-index: 3;
-		
-		& .header__top {
-			display: none;
-		}
-			
-		
-		& .header__bottom {
-			position: fixed;
-			top: 0;
-			left: 0;
-			background-color: white;
-			width: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			
-			max-width: $max-width;
-			margin: $centered;
-			padding: 1.6rem 3.2rem;
-			
-			&__left {
-				
-				& figure {
-					
-					&.desktop-large {
-						display: none;
-						
-						& img {
-							height: 0;
-						}
-						
-					}
-					
-					&.mobile-small {
-						display: block;
-						
-						& img {
-							height: 3.2rem;
-						}
-						
-					}
-					
-				}
-				
-			}
-			
-			&__right {
-				display: flex;
-				align-items: center;
-				
-				div {
-					
-					&.burger-menu {
-						display: block;
-					}
-					
-				}
-				
-				nav {
-					
-					&.navigation {
-						display: none;
-						
-						&-mobile {
-							display: flex;
-							flex-direction: column;
-							justify-content: center;
-							align-items: center;
-							
-							& a {
-								font-size: 2.7rem;
-								margin-bottom: .8rem;
-							}
-						}
-						
-					}
-					
-				}
-				
-			}
-			
-		}
-		
-	}
-	
-	section {
-		
-		&.hero {
-			margin-top: 6.4rem;
-			
-			& .hero__textbox {
-				padding-top: 12.5vmin;
-				padding-bottom: 12.5vmin;
-				
-				
-				&__inner {
-					width: 85%;
-					padding: 3.2rem;
-					
-					& h4 {
-						font-size: 2.4rem;
-						margin-bottom: 1.6rem;
-					}
-					
-					& p {
-						font-size: 1.6rem;
-						margin-bottom: 4rem;
-					}
-				}
-				
-			}
-		}
-		
-	}
-	
-	.titlebar {
-		margin-top: 6rem;
-		
-		&__inner {
-			max-width: $max-width;
-			margin: $centered;
-			padding: 2.4rem 3.2rem;
-			
-			& h1 {
-				font-size: 2.4rem;
-				color: #fff;
-			}
-		}
-	}
-	
-	main {
-		
-		&.content {
-			padding: .8rem 3.2rem;
-			flex-direction: column;
-			
-			& figure {
-				
-				&.portrait {
-					width: 66.667%;
-					margin: 2.4rem 0 3.2rem 0;
-					
-				}
-				
-			}
-			
-			& .content {
-				
-				&__about {
-					width: 100%;
-					
-					& p {
-						
-						&.introduction {
-							font-size: 1.8rem;
-						}
-						
-					}
-					
-					& .lebenslauf {
-						margin-top: 6.4rem;
-						font-size: 1.6rem;
-						
-						& h4 {
-							
-							&.lebenslauf__headline {
-								margin-bottom: 1.6rem;
-								font-weight: 500;
-							}
-							
-						}
-						
-						&__grid {
-							grid-template-columns: 1fr;
-							grid-row-gap: 0;
-							margin-bottom: 4rem;
-						}
-						
-						& p {
-							
-							&.lebenslauf__grid__value {
-								margin-right: 1.6rem;
-							}
-							
-							&.lebenslauf__grid__content {
-								margin-bottom: 1.6rem;
-							}
-							
-						}
-					}
-				}
-				
-				&__praxiskonzept,
-				&__anfahrt,
-				&__general,
-				&__kontakt {
-					margin-top: 2.4rem;
-					
-					& p {
-						
-						&.introduction {
-							font-size: 2rem;
-						}
-						
-					}
-					
-					& .copy {
-						margin-top: 3.2rem;
-						color: $grey-dark;
-						
-						
-						& h4 {
-							
-							&.copy__headline {
-								margin-bottom: 1.6rem;
-							}
-							
-						}
-						
+  header {
+    position: relative;
+    z-index: 3;
 
-						
-						& .copy__text {
-							margin-bottom: 4rem;
-						}
-					}
-				}
-				
-				&__fachbereiche {
-					margin-top: 2.4rem;
-					
-					p {
-						
-						&.copy {
-							font-size: 2rem;
-							margin-bottom: .4rem;
-							color: $black;
-						}	
-						
-					}
-					
-				}
-				
-			}
-			
-	
-		}
-		
-	}
-	
-	footer {
-		
-		&.footer {
-			
-			& .footer__top {
-				
-				&__inner {
-					flex-direction: column;
-					padding: 3.2rem;
-					padding-bottom: 6.4rem;
-					
-					&__left {
-						width: 100%;
-						margin-bottom: 4rem;						
-					}
-					
-					&__headline {
-						margin-bottom: 1.6rem;
-						
-						& h5 {
-							font-size: 2rem;
-							font-weight: 500;
-							color: $black;
-						}
-						
-					}
-					
-					&__kontakt {
-						
-						&__row {
-							font-size: 1.4rem;
-							padding-top: .4rem;
-							padding-bottom: .4rem;
-						}
-						
-					}
-					
-					&__sprechzeiten {
-						
-						&__row {
-							font-size: 1.4rem;
-							
-							& p {
-								text-align: right;
-							}
-						}
-						
-					}
-					
-					&__right {
-						width: 100%;
-					}
-					
-					
-					&__sprechzeiten {
-						
-						&__inner {
-							display: flex;
-							flex-direction: column;
-							width: 100%;
-							
-							&__left {
-								width: 100%;
-								margin-right: 4rem;
-							}
-							
-							&__right {
-								width: 100%;
-							}
-						}
-						
-					}
-					
-				}
-				
-			}
-			
-			& .footer__bottom {
-				
-				&__inner {
-					flex-direction: column;
-					
-					max-width: $max-width;
-					margin: $centered;
-					padding: 1.6rem 3.2rem;
-					font-size: 1.4rem;
-					font-weight: 500;
-					
-					&__col {
-						
-						&:first-of-type {
-							margin-bottom: 1.6rem;
-						}
-						
-						& p {
-							color: $grey-medium;
-						}
-						
-						& a {
-							text-decoration: none;
-							color: $black;
-							padding-left: 0;
-							padding-right: 2.4rem;
-							transition: all .3s ease-out;
-							
-							&:hover {
-								text-decoration: underline;
-								color: $blue-regular;
-							}
-						}
-						
-					}
-				}
-				
-			}
-			
-		}
-		
-	}
-	
+    & .header__top {
+      display: none;
+    }
+
+    & .header__bottom {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: white;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      max-width: $max-width;
+      margin: $centered;
+      padding: 1.6rem 3.2rem;
+
+      &__left {
+        & figure {
+          &.desktop-large {
+            display: none;
+
+            & img {
+              height: 0;
+            }
+          }
+
+          &.mobile-small {
+            display: block;
+
+            & img {
+              height: 3.2rem;
+            }
+          }
+        }
+      }
+
+      &__right {
+        display: flex;
+        align-items: center;
+
+        div {
+          &.burger-menu {
+            display: block;
+          }
+        }
+
+        nav {
+          &.navigation {
+            display: none;
+
+            &-mobile {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+
+              & a {
+                font-size: 2.7rem;
+                margin-bottom: 0.8rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    &.hero {
+      margin-top: 6.4rem;
+
+      & .hero__textbox {
+        padding-top: 12.5vmin;
+        padding-bottom: 12.5vmin;
+
+        &__inner {
+          width: 85%;
+          padding: 3.2rem;
+
+          & h4 {
+            font-size: 2.4rem;
+            margin-bottom: 1.6rem;
+          }
+
+          & p {
+            font-size: 1.6rem;
+            margin-bottom: 4rem;
+          }
+        }
+      }
+    }
+  }
+
+  .titlebar {
+    margin-top: 6rem;
+
+    &__inner {
+      max-width: $max-width;
+      margin: $centered;
+      padding: 2.4rem 3.2rem;
+
+      & h1 {
+        font-size: 2.4rem;
+        color: #fff;
+      }
+    }
+  }
+
+  main {
+    &.content {
+      padding: 0.8rem 3.2rem;
+      flex-direction: column;
+
+      & figure {
+        &.portrait {
+          width: 66.667%;
+          margin: 2.4rem 0 3.2rem 0;
+        }
+      }
+
+      & .content {
+        &__about {
+          width: 100%;
+
+          & p {
+            &.introduction {
+              font-size: 1.8rem;
+            }
+          }
+
+          & .lebenslauf {
+            margin-top: 6.4rem;
+            font-size: 1.6rem;
+
+            & h4 {
+              &.lebenslauf__headline {
+                margin-bottom: 1.6rem;
+                font-weight: 500;
+              }
+            }
+
+            &__grid {
+              grid-template-columns: 1fr;
+              grid-row-gap: 0;
+              margin-bottom: 4rem;
+            }
+
+            & p {
+              &.lebenslauf__grid__value {
+                margin-right: 1.6rem;
+              }
+
+              &.lebenslauf__grid__content {
+                margin-bottom: 1.6rem;
+              }
+            }
+          }
+        }
+
+        &__praxiskonzept,
+        &__anfahrt,
+        &__general,
+        &__kontakt {
+          margin-top: 2.4rem;
+
+          & p {
+            &.introduction {
+              font-size: 2rem;
+            }
+          }
+
+          & .copy {
+            margin-top: 3.2rem;
+            color: $grey-dark;
+
+            & h4 {
+              &.copy__headline {
+                margin-bottom: 1.6rem;
+              }
+            }
+
+            & .copy__text {
+              margin-bottom: 4rem;
+            }
+          }
+        }
+
+        &__fachbereiche {
+          margin-top: 2.4rem;
+
+          p {
+            &.copy {
+              font-size: 2rem;
+              margin-bottom: 0.4rem;
+              color: $black;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    &.footer {
+      & .footer__top {
+        &__inner {
+          flex-direction: column;
+          padding: 3.2rem;
+          padding-bottom: 6.4rem;
+
+          &__left {
+            width: 100%;
+            margin-bottom: 4rem;
+          }
+
+          &__headline {
+            margin-bottom: 1.6rem;
+
+            & h5 {
+              font-size: 2rem;
+              font-weight: 500;
+              color: $black;
+            }
+          }
+
+          &__kontakt {
+            &__row {
+              font-size: 1.4rem;
+              padding-top: 0.4rem;
+              padding-bottom: 0.4rem;
+            }
+          }
+
+          &__sprechzeiten {
+            &__row {
+              font-size: 1.4rem;
+
+              & p {
+                text-align: right;
+              }
+            }
+          }
+
+          &__right {
+            width: 100%;
+          }
+
+          &__sprechzeiten {
+            &__inner {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+
+              &__left {
+                width: 100%;
+                margin-right: 4rem;
+              }
+
+              &__right {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+
+      & .footer__bottom {
+        &__inner {
+          flex-direction: column;
+
+          max-width: $max-width;
+          margin: $centered;
+          padding: 1.6rem 3.2rem;
+          font-size: 1.4rem;
+          font-weight: 500;
+
+          &__col {
+            &:first-of-type {
+              margin-bottom: 1.6rem;
+            }
+
+            & p {
+              color: $grey-medium;
+            }
+
+            & a {
+              text-decoration: none;
+              color: $black;
+              padding-left: 0;
+              padding-right: 2.4rem;
+              transition: all 0.3s ease-out;
+
+              &:hover {
+                text-decoration: underline;
+                color: $blue-regular;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 320px) {
-	
-	header {
-		
-		& .header__bottom {
-			padding: 1.6rem 2.4rem;
-			
-			&__right {
-				
-				& nav {
-					
-					&.navigation {
-						
-						&-mobile {
-							
-							& a {
-								
-								font-size: 2.1rem;
-								
-							}
-							
-						}
-						
-					}
-					
-				}
-				
-			}
-		}
-		
-	}
-	
-	section {
-		
-		&.hero {
-			
-			& .hero {
-				
-				&__textbox {
-					
-					&__inner {
-						width: auto;
-						margin: 2.4rem;
-						padding: 2.4rem;
-						
-						& h4 {
-							font-size: 2.1rem;
-						}
-						
-					}
-					
-				}
-				
-			}
-			
-		}
-		
-	}
-	
-	.titlebar {
-		
-		&__inner {
-			padding: 1.6rem 2.4rem;
-			
-			& h1 {
-			font-size: 2.1rem;	
-			}
-		}
-		
-	}
-	
-	main {
-		
-		&.content {
-			padding: .8rem 2.4rem;
-			
-			& .content {
-				
-				&__praxiskonzept,
-				&__anfahrt,
-				&__general {
-					margin-top: 1.6rem;
-					
-					& p {
-						
-						&.introduction {
-							font-size: 1.8rem;
-						}
-						
-					}
-				}
-				
-			}
-			
-			& figure {
-				
-				&.portrait {
-					margin: 2.4rem 0;
-				}
-				
-			}
-			
+  header {
+    & .header__bottom {
+      padding: 1.6rem 2.4rem;
 
-		}
-		
-	}
-	
-	footer {
-		
-		&.footer {
-			
-			& .footer {
-				
-				&__top {
-					
-					&__inner {
-						padding: 2.4rem;
-					}
-					
-				}
-				
-				&__bottom {
-					
-					&__inner {
-						padding: 1.6rem 2.4rem;
-					}
-					
-				}
-				
-			}
-			
-		}
-		
-	}
-	
+      &__right {
+        & nav {
+          &.navigation {
+            &-mobile {
+              & a {
+                font-size: 2.1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    &.hero {
+      & .hero {
+        &__textbox {
+          &__inner {
+            width: auto;
+            margin: 2.4rem;
+            padding: 2.4rem;
+
+            & h4 {
+              font-size: 2.1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .titlebar {
+    &__inner {
+      padding: 1.6rem 2.4rem;
+
+      & h1 {
+        font-size: 2.1rem;
+      }
+    }
+  }
+
+  main {
+    &.content {
+      padding: 0.8rem 2.4rem;
+
+      & .content {
+        &__praxiskonzept,
+        &__anfahrt,
+        &__general {
+          margin-top: 1.6rem;
+
+          & p {
+            &.introduction {
+              font-size: 1.8rem;
+            }
+          }
+        }
+      }
+
+      & figure {
+        &.portrait {
+          margin: 2.4rem 0;
+        }
+      }
+    }
+  }
+
+  footer {
+    &.footer {
+      & .footer {
+        &__top {
+          &__inner {
+            padding: 2.4rem;
+          }
+        }
+
+        &__bottom {
+          &__inner {
+            padding: 1.6rem 2.4rem;
+          }
+        }
+      }
+    }
+  }
 }
